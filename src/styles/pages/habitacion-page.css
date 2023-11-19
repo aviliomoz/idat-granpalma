@@ -1,0 +1,42 @@
+.habitacion-page {
+  padding: 40px 100px;
+}
+
+.habitacion-page__contenedor {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    gap: 80px;
+}
+
+.habitacion-page__encabezado {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.habitacion-page__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-between;
+  
+}
+
+.habitacion-page__contenido img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.habitacion-page__contenido--detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.habitacion-page__contenido--detalles strong {
+  font-size: 14px;
+  margin-right: 12px;
+}
