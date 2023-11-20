@@ -21,12 +21,12 @@ export function HabitacionPage() {
     <>
       <section className="habitacion-page">
         <div className="habitacion-page__encabezado">
-          <h3>{habitacion.descripcion}</h3>
+          <h3>{habitacion.nombre}</h3>
           <Filtros />
         </div>
         <div className="habitacion-page__contenedor">
           <div className="habitacion-page__contenido">
-            <img src={habitacion.imagen} />
+            <img src={habitacion.imagenes[0]} />
             <div className="habitacion-page__contenido--detalles">
               <h4>Características de la habitación:</h4>
               <p>
