@@ -1,10 +1,10 @@
 import "../styles/components/formulario-reserva.css";
 
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useFiltro } from "../hooks/useFiltro";
 
 export function FormularioReserva({ habitacion }) {
-  const [searchParams] = useSearchParams();
+  const { llegada, salida, adultos, infantes } = useFiltro();
 
   const [dni, setDni] = useState("");
   const [nombre, setNombre] = useState("");
@@ -38,11 +38,9 @@ export function FormularioReserva({ habitacion }) {
     console.log({
       cliente_id: cliente.id,
       habitacion_id: habitacion.id_habitaciones,
-      fechaLlegada: searchParams.get("llegada"),
-      fechaSalida: searchParams.get("salida"),
-      huespedes:
-        parseInt(searchParams.get("adultos")) +
-        parseInt(searchParams.get("infantes")),
+      fechaLlegada: llegada,
+      fechaSalida: salida,
+      huespedes: parseInt(adultos) + parseInt(infantes),
     });
   };
 

@@ -10,7 +10,7 @@ export function HabitacionPage() {
   const [habitacion, setHabitacion] = useState();
 
   useEffect(() => {
-    fetch(``).then((res) =>
+    fetch(`http://localhost:9797/rest_hab/${id}`).then((res) =>
       res.json().then((habitacion) => setHabitacion(habitacion))
     );
   }, []);
