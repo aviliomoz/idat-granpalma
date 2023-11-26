@@ -1,47 +1,38 @@
 import "../styles/components/formulario-reserva.css";
 
 import { useState } from "react";
-import { useFiltro } from "../hooks/useFiltro";
+import { useFiltros } from "../hooks/useFiltros";
+import { crearReserva } from "../functions/reservas";
 
 export function FormularioReserva({ habitacion }) {
-  const { llegada, salida, adultos, infantes } = useFiltro();
+  const { llegada, salida, adultos, infantes } = useFiltros();
 
   const [dni, setDni] = useState("");
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
+  const [nombres, setNombres] = useState("");
+  const [apellidos, setApellidos] = useState("");
   const [celular, setCelular] = useState("");
   const [correo, setCorreo] = useState("");
-
-  const crearCliente = (cliente) => {
-    console.log({
-      dni: cliente.dni,
-      nombre: cliente.nombre,
-      apellido: cliente.apellido,
-      celular: cliente.celular,
-      correo: cliente.correo,
-    });
-
-    return { ...cliente, id: 1 };
-  };
 
   const reservar = (e) => {
     e.preventDefault();
 
-    const cliente = crearCliente({
-      dni,
-      nombre,
-      apellido,
-      celular,
-      correo,
-    });
+    const datos_reserva = {
+      cliente: {
+        dni,
+        nombres,
+        apellidos,
+        celular,
+        correo,
+      },
+      habitacion_id: habitacion.id,
+      fecha_llegada: llegada,
+      fecha_salida: salida,
+      huespedes: adultos + infantes,
+    };
 
-    console.log({
-      cliente_id: cliente.id,
-      habitacion_id: habitacion.id_habitaciones,
-      fechaLlegada: llegada,
-      fechaSalida: salida,
-      huespedes: parseInt(adultos) + parseInt(infantes),
-    });
+    crearReserva(datos_reserva).then((data) =>
+      alert("Reserva registrada correctamente con el codigo: " + data.id)
+    );
   };
 
   return (
@@ -59,16 +50,16 @@ export function FormularioReserva({ habitacion }) {
         <span>Nombre:</span>
         <input
           type="text"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
+          value={nombres}
+          onChange={(e) => setNombres(e.target.value)}
         />
       </label>
       <label>
         <span>Apellido:</span>
         <input
           type="text"
-          value={apellido}
-          onChange={(e) => setApellido(e.target.value)}
+          value={apellidos}
+          onChange={(e) => setApellidos(e.target.value)}
         />
       </label>
       <label>

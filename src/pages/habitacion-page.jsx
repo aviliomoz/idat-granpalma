@@ -4,15 +4,14 @@ import { useEffect, useState } from "react";
 import { FormularioReserva } from "../components/formulario-reserva";
 import { Filtros } from "../components/filtros";
 import { useParams } from "react-router-dom";
+import { obtenerHabitacionPorId } from "../functions/habitaciones";
 
 export function HabitacionPage() {
   const { id } = useParams();
   const [habitacion, setHabitacion] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:9797/rest_hab/${id}`).then((res) =>
-      res.json().then((habitacion) => setHabitacion(habitacion))
-    );
+    obtenerHabitacionPorId(id).then(setHabitacion);
   }, []);
 
   if (!habitacion) return <></>;
@@ -26,7 +25,7 @@ export function HabitacionPage() {
         </div>
         <div className="habitacion-page__contenedor">
           <div className="habitacion-page__contenido">
-            <img src={habitacion.imagenes[0]} />
+            <img src={habitacion.imagenes[0]?.url} />
             <div className="habitacion-page__contenido--detalles">
               <h4>Características de la habitación:</h4>
               <p>

@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 
-export const useFiltro = () => {
+export const useFiltros = () => {
   const [searchParams] = useSearchParams();
 
   return {

@@ -1,7 +1,7 @@
-import { useFiltro } from "../hooks/useFiltro";
+import { useFiltros } from "../hooks/useFiltros";
 
 export function Filtros() {
-  const { llegada, salida, adultos, infantes } = useFiltro();
+  const { llegada, salida, adultos, infantes } = useFiltros();
 
   return (
     <div className="resultados_titulo_filtros">

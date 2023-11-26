@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { obtenerFecha } from "../utils/fechas";
+import { obtenerFecha } from "../functions/fechas";
 
 export function BarraBusqueda() {
   const [fechaLlegada, setFechaLlegada] = useState(obtenerFecha());
