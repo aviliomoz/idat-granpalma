@@ -19,14 +19,14 @@ function generarCodigoAleatorio() {
 }
 
 export const obtenerReservas = async () => {
-  const res = await fetch(url, {mode: "no-cors"});
+  const res = await fetch(url, {});
   const data = await res.json();
 
   return data;
 };
 
 export const obtenerReservaPorId = async (id) => {
-  const res = await fetch(url + id, {mode: "no-cors"});
+  const res = await fetch(url + id, {});
   const data = await res.json();
 
   return data;
@@ -47,7 +47,7 @@ export const crearReserva = async (reserva) => {
       estado: true,
       id: generarCodigoAleatorio(),
     }),
-    mode: "no-cors"
+    
   });
 
   const data = await res.json();
@@ -60,7 +60,7 @@ export const actualizarReserva = async (id, reserva) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(reserva),
-    mode: "no-cors"
+    
   });
 
   const data = await res.json();
@@ -75,7 +75,7 @@ export const desactivarReserva = async (id) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...reserva, estado: false }),
-    mode: "no-cors"
+    
   });
 
   const data = await res.json();
@@ -90,7 +90,7 @@ export const activarReserva = async (id) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...reserva, estado: true }),
-    mode: "no-cors"
+    
   });
 
   const data = await res.json();

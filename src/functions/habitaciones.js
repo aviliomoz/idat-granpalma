@@ -6,7 +6,7 @@ import { obtenerImagenesPorHabitacion } from "./imagenes";
 const url = "http://localhost:9797/habitaciones/";
 
 export const obtenerHabitaciones = async () => {
-  const res = await fetch(url, {mode: "no-cors"});
+  const res = await fetch(url, {});
   const data = await res.json();
 
   return data;
@@ -59,7 +59,7 @@ export const obtenerHabitacionesDisponibles = async (filtros) => {
 };
 
 export const obtenerHabitacionPorId = async (id) => {
-  const res = await fetch(url + id, {mode: "no-cors"});
+  const res = await fetch(url + id, {});
   const habitacion = await res.json();
 
   const imagenes = (await obtenerImagenesPorHabitacion(habitacion.id)) || [];
@@ -72,7 +72,7 @@ export const crearHabitacion = async (habitacion) => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(habitacion),
-    mode: "no-cors"
+    
   });
 
   const data = await res.json();
@@ -85,7 +85,7 @@ export const actualizarHabitacion = async (id, habitacion) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(habitacion),
-    mode: "no-cors"
+    
   });
 
   const data = await res.json();
@@ -100,7 +100,7 @@ export const desactivarHabitacion = async (id) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...habitacion, estado: false }),
-    mode: "no-cors"
+    
   });
 
   const data = await res.json();
@@ -115,7 +115,7 @@ export const activarHabitacion = async (id) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...habitacion, estado: true }),
-    mode: "no-cors"
+    
   });
 
   const data = await res.json();
