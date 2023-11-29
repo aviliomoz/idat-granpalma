@@ -1,21 +1,21 @@
 const url = "http://localhost:9797/clientes/";
 
 export const optenerClientes = async () => {
-  const res = await fetch(url);
+  const res = await fetch(url, {mode: "no-cors"});
   const data = await res.json();
 
   return data;
 };
 
 export const obtenerClientePorId = async (id) => {
-  const res = await fetch(url + id);
+  const res = await fetch(url + id, {mode: "no-cors"});
   const data = await res.json();
 
   return data;
 };
 
 export const obtenerClientePorDni = async (dni) => {
-  const res = await fetch(url);
+  const res = await fetch(url, {mode: "no-cors"});
   const data = await res.json();
 
   return data.find((cliente) => cliente.dni == dni) || null;
@@ -34,6 +34,7 @@ export const crearCliente = async (datos_cliente) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(datos_cliente),
+    mode: "no-cors"
   });
 
   const data = await res.json();
@@ -48,6 +49,7 @@ export const actualizarCliente = async (id, cliente) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(cliente),
+    mode: "no-cors"
   });
 
   const data = await res.json();
@@ -64,6 +66,7 @@ export const desactivarCliente = async (id) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ ...cliente, estado: false }),
+    mode: "no-cors"
   });
 
   const data = await res.json();
@@ -80,6 +83,7 @@ export const activarCliente = async (id) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ ...cliente, estado: true }),
+    mode: "no-cors"
   });
 
   const data = await res.json();
