@@ -3,6 +3,7 @@ import "../styles/components/formulario-reserva.css";
 import { useState } from "react";
 import { useFiltros } from "../hooks/useFiltros";
 import { crearReserva } from "../functions/reservas";
+import { Modal } from "./modal";
 
 export function FormularioReserva({ habitacion }) {
   const { llegada, salida, adultos, infantes } = useFiltros();
@@ -12,6 +13,8 @@ export function FormularioReserva({ habitacion }) {
   const [apellidos, setApellidos] = useState("");
   const [celular, setCelular] = useState("");
   const [correo, setCorreo] = useState("");
+
+  const [modal, setModal] = useState();
 
   const reservar = (e) => {
     e.preventDefault();
@@ -30,55 +33,71 @@ export function FormularioReserva({ habitacion }) {
       huespedes: adultos + infantes,
     };
 
-    crearReserva(datos_reserva).then((data) =>
-      alert("Reserva registrada correctamente con el codigo: " + data.id)
-    );
+    crearReserva(datos_reserva).then((data) => setModal(data.id));
+  };
+
+  const handleCloseModal = () => {
+    setModal(undefined);
+    window.location.assign("/");
   };
 
   return (
-    <form onSubmit={reservar} className="formulario-reserva">
-      <h4>Completa tu reserva:</h4>
-      <label>
-        <span>DNI:</span>
-        <input
-          type="text"
-          value={dni}
-          onChange={(e) => setDni(e.target.value)}
-        />
-      </label>
-      <label>
-        <span>Nombre:</span>
-        <input
-          type="text"
-          value={nombres}
-          onChange={(e) => setNombres(e.target.value)}
-        />
-      </label>
-      <label>
-        <span>Apellido:</span>
-        <input
-          type="text"
-          value={apellidos}
-          onChange={(e) => setApellidos(e.target.value)}
-        />
-      </label>
-      <label>
-        <span>Celular:</span>
-        <input
-          type="text"
-          value={celular}
-          onChange={(e) => setCelular(e.target.value)}
-        />
-      </label>
-      <label>
-        <span>Correo:</span>
-        <input
-          type="text"
-          value={correo}
-          onChange={(e) => setCorreo(e.target.value)}
-        />
-      </label>
-      <button type="submit">Reservar</button>
-    </form>
+    <>
+      {modal && (
+        <Modal onClose={handleCloseModal}>
+          <strong>Reserva registrada correctamente</strong>
+          <p>
+            Su código de reserva es: <strong>{modal}</strong>
+          </p>
+          <button className="modal_aceptar" onClick={handleCloseModal}>
+            Aceptar
+          </button>
+        </Modal>
+      )}
+      <form onSubmit={reservar} className="formulario-reserva">
+        <h4>Completa tu reserva:</h4>
+        <label>
+          <span>DNI:</span>
+          <input
+            type="text"
+            value={dni}
+            onChange={(e) => setDni(e.target.value)}
+          />
+        </label>
+        <label>
+          <span>Nombre:</span>
+          <input
+            type="text"
+            value={nombres}
+            onChange={(e) => setNombres(e.target.value)}
+          />
+        </label>
+        <label>
+          <span>Apellido:</span>
+          <input
+            type="text"
+            value={apellidos}
+            onChange={(e) => setApellidos(e.target.value)}
+          />
+        </label>
+        <label>
+          <span>Celular:</span>
+          <input
+            type="text"
+            value={celular}
+            onChange={(e) => setCelular(e.target.value)}
+          />
+        </label>
+        <label>
+          <span>Correo:</span>
+          <input
+            type="email"
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)}
+          />
+        </label>
+        <button type="submit">Reservar</button>
+      </form>
+    </>
   );
 }

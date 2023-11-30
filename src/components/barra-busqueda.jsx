@@ -4,13 +4,13 @@ import { obtenerFecha } from "../functions/fechas";
 
 export function BarraBusqueda() {
   const [fechaLlegada, setFechaLlegada] = useState(obtenerFecha());
-  const [fechaSalida, setFechaSalida] = useState(obtenerFecha(3));
+  const [fechaSalida, setFechaSalida] = useState(obtenerFecha(1));
   const [cantidadAdultos, setCantidadAdultos] = useState(1);
   const [cantidadInfantes, setCantidadInfantes] = useState(0);
 
   useEffect(() => {
-    if (fechaSalida < fechaLlegada) {
-      setFechaSalida(fechaLlegada);
+    if (fechaSalida <= fechaLlegada) {
+      setFechaSalida(obtenerFecha(fechaLlegada, 1));
     }
   }, [fechaLlegada]);
 
@@ -32,7 +32,7 @@ export function BarraBusqueda() {
           className="input-fecha"
           type="date"
           value={fechaSalida}
-          min={fechaLlegada}
+          min={obtenerFecha(fechaLlegada, 1)}
           onChange={(e) => setFechaSalida(e.target.value)}
         />
       </label>

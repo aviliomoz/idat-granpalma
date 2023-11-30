@@ -4,8 +4,7 @@ const url = "http://localhost:9797/reservas/";
 
 function generarCodigoAleatorio() {
   const longitud = 6;
-  const caracteres =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
   let codigoAleatorio = "";
 
   for (let i = 0; i < longitud; i++) {
@@ -29,7 +28,7 @@ export const obtenerReservaPorId = async (id) => {
   const res = await fetch(url + id, {});
   const data = await res.json();
 
-  return data;
+  return Object.entries(data).length == 0 ? null : data;
 };
 
 export const crearReserva = async (reserva) => {
@@ -47,7 +46,6 @@ export const crearReserva = async (reserva) => {
       estado: true,
       id: generarCodigoAleatorio(),
     }),
-    
   });
 
   const data = await res.json();
@@ -60,7 +58,6 @@ export const actualizarReserva = async (id, reserva) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(reserva),
-    
   });
 
   const data = await res.json();
@@ -75,7 +72,6 @@ export const desactivarReserva = async (id) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...reserva, estado: false }),
-    
   });
 
   const data = await res.json();
@@ -90,7 +86,6 @@ export const activarReserva = async (id) => {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...reserva, estado: true }),
-    
   });
 
   const data = await res.json();
