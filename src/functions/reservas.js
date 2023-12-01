@@ -45,23 +45,23 @@ export const crearReserva = async (reserva) => {
     id: codigo,
   });
 
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      cliente_id: cliente.id,
-      habitacion_id: reserva.habitacion_id,
-      fecha_llegada: reserva.fecha_llegada,
-      fecha_salida: reserva.fecha_salida,
-      huespedes: reserva.huespedes,
-      estado: true,
-      id: codigo,
-    }),
-  });
+  // const res = await fetch(url, {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json" },
+  //   body: JSON.stringify({
+  //     cliente_id: cliente.id,
+  //     habitacion_id: reserva.habitacion_id,
+  //     fecha_llegada: reserva.fecha_llegada,
+  //     fecha_salida: reserva.fecha_salida,
+  //     huespedes: reserva.huespedes,
+  //     estado: true,
+  //     id: codigo,
+  //   }),
+  // });
 
-  const data = await res.json();
+  // const data = await res.json();
 
-  return data;
+  // return data;
 };
 
 export const actualizarReserva = async (id, reserva) => {
