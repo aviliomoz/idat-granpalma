@@ -1,6 +1,6 @@
 import { crearCliente } from "./clientes";
 
-const url = "http://localhost:9797/reservas/";
+const url = "http://localhost:9797/reservas";
 
 function generarCodigoAleatorio() {
   const longitud = 6;
@@ -25,7 +25,7 @@ export const obtenerReservas = async () => {
 };
 
 export const obtenerReservaPorId = async (id) => {
-  const res = await fetch(url + id, {});
+  const res = await fetch(url + `/${id}`, {});
   const data = await res.json();
 
   return Object.entries(data).length == 0 ? null : data;
@@ -54,7 +54,7 @@ export const crearReserva = async (reserva) => {
 };
 
 export const actualizarReserva = async (id, reserva) => {
-  const res = await fetch(url + id, {
+  const res = await fetch(url + `/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(reserva),
@@ -68,7 +68,7 @@ export const actualizarReserva = async (id, reserva) => {
 export const desactivarReserva = async (id) => {
   const reserva = await obtenerReservaPorId(id);
 
-  const res = await fetch(url + reserva.id, {
+  const res = await fetch(url + `/${reserva.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...reserva, estado: false }),
@@ -82,7 +82,7 @@ export const desactivarReserva = async (id) => {
 export const activarReserva = async (id) => {
   const reserva = await obtenerReservaPorId(id);
 
-  const res = await fetch(url + reserva.id, {
+  const res = await fetch(url + `/${reserva.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...reserva, estado: true }),

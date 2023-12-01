@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { obtenerReservas } from "./reservas";
 import { obtenerImagenesPorHabitacion } from "./imagenes";
 
-const url = "http://localhost:9797/habitaciones/";
+const url = "http://localhost:9797/habitaciones";
 
 export const obtenerHabitaciones = async () => {
   const res = await fetch(url, {});
@@ -59,7 +59,7 @@ export const obtenerHabitacionesDisponibles = async (filtros) => {
 };
 
 export const obtenerHabitacionPorId = async (id) => {
-  const res = await fetch(url + id, {});
+  const res = await fetch(url + `/${id}`, {});
   const habitacion = await res.json();
 
   const imagenes = (await obtenerImagenesPorHabitacion(habitacion.id)) || [];
@@ -81,7 +81,7 @@ export const crearHabitacion = async (habitacion) => {
 };
 
 export const actualizarHabitacion = async (id, habitacion) => {
-  const res = await fetch(url + id, {
+  const res = await fetch(url + `/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(habitacion),
@@ -96,7 +96,7 @@ export const actualizarHabitacion = async (id, habitacion) => {
 export const desactivarHabitacion = async (id) => {
   const habitacion = await obtenerHabitacionPorId(id);
 
-  const res = await fetch(url + habitacion.id, {
+  const res = await fetch(url + `/${habitacion.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...habitacion, estado: false }),

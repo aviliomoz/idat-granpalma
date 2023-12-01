@@ -4,6 +4,7 @@ import { MainLayout } from "./layouts/main-layout";
 import { HomePage } from "./pages/home-page";
 import { ResultadosPage } from "./pages/resultados-page";
 import { HabitacionPage } from "./pages/habitacion-page";
+import { ReservaPage } from "./pages/reserva-page";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/habitaciones" element={<ResultadosPage />} />
             <Route path="/habitaciones/:id" element={<HabitacionPage />} />
-            <Route path="/reserva/:id" element={<h1>Reserva page</h1>} />
+            <Route path="/reserva/:id" element={<ReservaPage />} />
           </Route>
         </Routes>
       </Router>
