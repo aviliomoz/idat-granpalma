@@ -32,20 +32,8 @@ export const obtenerReservaPorId = async (id) => {
 };
 
 export const crearReserva = async (reserva) => {
-
-  console.log("Hola Macuri")
   const cliente = await crearCliente(reserva.cliente);
   const codigo = generarCodigoAleatorio();
-
-  console.log({
-    cliente_id: cliente.id,
-    habitacion_id: reserva.habitacion_id,
-    fecha_llegada: reserva.fecha_llegada,
-    fecha_salida: reserva.fecha_salida,
-    huespedes: reserva.huespedes,
-    estado: true,
-    id: codigo,
-  });
 
   const res = await fetch(url, {
     method: "POST",

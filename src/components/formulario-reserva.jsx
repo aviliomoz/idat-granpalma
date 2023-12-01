@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 
 export function FormularioReserva() {
   const { id: habitacion_id } = useParams();
-  // const habitacion_id = 1;
   const { llegada, salida, adultos, infantes } = useFiltros();
 
   const [dni, setDni] = useState("");
@@ -30,7 +29,7 @@ export function FormularioReserva() {
         telefono,
         email,
       },
-      habitacion_id,
+      habitacion_id: parseInt(habitacion_id),
       fecha_llegada: llegada,
       fecha_salida: salida,
       huespedes: adultos + infantes,
