@@ -11,8 +11,8 @@ export function FormularioReserva({ habitacion }) {
   const [dni, setDni] = useState("");
   const [nombres, setNombres] = useState("");
   const [apellidos, setApellidos] = useState("");
-  const [celular, setCelular] = useState("");
-  const [correo, setCorreo] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [email, setEmail] = useState("");
 
   const [modal, setModal] = useState();
 
@@ -24,8 +24,8 @@ export function FormularioReserva({ habitacion }) {
         dni,
         nombres,
         apellidos,
-        celular,
-        correo,
+        telefono,
+        email,
       },
       habitacion_id: habitacion.id,
       fecha_llegada: llegada,
@@ -65,7 +65,7 @@ export function FormularioReserva({ habitacion }) {
           />
         </label>
         <label>
-          <span>Nombre:</span>
+          <span>Nombres:</span>
           <input
             type="text"
             value={nombres}
@@ -73,7 +73,7 @@ export function FormularioReserva({ habitacion }) {
           />
         </label>
         <label>
-          <span>Apellido:</span>
+          <span>Apellidos:</span>
           <input
             type="text"
             value={apellidos}
@@ -81,19 +81,19 @@ export function FormularioReserva({ habitacion }) {
           />
         </label>
         <label>
-          <span>Celular:</span>
+          <span>Teléfono:</span>
           <input
             type="text"
-            value={celular}
-            onChange={(e) => setCelular(e.target.value)}
+            value={telefono}
+            onChange={(e) => setTelefono(e.target.value)}
           />
         </label>
         <label>
-          <span>Correo:</span>
+          <span>Email:</span>
           <input
             type="email"
-            value={correo}
-            onChange={(e) => setCorreo(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <button type="submit">Reservar</button>
