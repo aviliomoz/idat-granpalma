@@ -1,16 +1,22 @@
+import "../styles/pages/reserva-page.css";
+
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { obtenerReservaPorId } from "../functions/reservas";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { desactivarReserva, obtenerReservaPorId } from "../functions/reservas";
 import { obtenerClientePorId } from "../functions/clientes";
 import { obtenerHabitacionPorId } from "../functions/habitaciones";
-import dayjs from "dayjs";
+import { Modal } from "../components/modal";
+import toast from "react-hot-toast";
 
 export function ReservaPage() {
   const { id } = useParams();
+  const navigate = useNavigate()
 
   const [cliente, setCliente] = useState();
   const [reserva, setReserva] = useState();
   const [habitacion, setHabitacion] = useState();
+
+  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     obtenerReservaPorId(id).then((reserva) => {
@@ -24,10 +30,24 @@ export function ReservaPage() {
     });
   }, []);
 
+  const handleAnular = () => {
+    setModal(false)
+    desactivarReserva(id)
+    navigate("/")
+    toast.success("Se anuló la reserva correctamente.")
+  }
+
   if (!cliente || !reserva || !habitacion) return <></>;
 
   return (
     <>
+      {modal && (
+        <Modal onClose={() => setModal(false)}>
+          <p>Estas seguro de que quieres anular la reserva</p>
+          {/* <button className="modal_cancelar" onClick={() => setModal(false)}>Cancelar</button> */}
+          <button className="modal_aceptar" onClick={handleAnular}>Eliminar</button>
+        </Modal>
+      )}
       <section className="reserva-page">
         <h3>Tu reserva:</h3>
         <div className="reserva-page__contenedor">
@@ -83,11 +103,13 @@ export function ReservaPage() {
             <p>
               <strong>Total a pagar: </strong>
               S/
-              {(
-                50
-              ).toFixed(2)}
+              {(50).toFixed(2)}
             </p>
           </div>
+        </div>
+        <div className="reserva-page__botones">
+          <Link to={"/"}>Volver al inicio</Link>
+          <button onClick={() => setModal(true)}>Anular reserva</button>
         </div>
       </section>
     </>

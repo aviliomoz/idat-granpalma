@@ -1,4 +1,4 @@
-const url = "http://localhost:9797/clientes/";
+const url = "http://localhost:9797/clientes";
 
 export const optenerClientes = async () => {
   const res = await fetch(url, {});
@@ -8,7 +8,7 @@ export const optenerClientes = async () => {
 };
 
 export const obtenerClientePorId = async (id) => {
-  const res = await fetch(url + id, {});
+  const res = await fetch(url + `/${id}`, {});
   const data = await res.json();
 
   return data;
@@ -43,7 +43,7 @@ export const crearCliente = async (datos_cliente) => {
 };
 
 export const actualizarCliente = async (id, cliente) => {
-  const res = await fetch(url + id, {
+  const res = await fetch(url + `/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -60,7 +60,7 @@ export const actualizarCliente = async (id, cliente) => {
 export const desactivarCliente = async (id) => {
   const cliente = await obtenerClientePorId(id);
 
-  const res = await fetch(url + cliente.id, {
+  const res = await fetch(url + `/${cliente.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export const desactivarCliente = async (id) => {
 export const activarCliente = async (id) => {
   const cliente = await obtenerClientePorId(id);
 
-  const res = await fetch(url + cliente.id, {
+  const res = await fetch(url + `/${cliente.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

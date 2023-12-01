@@ -29,6 +29,9 @@ export function HabitacionPage() {
             <div className="habitacion-page__contenido--detalles">
               <h4>Características de la habitación:</h4>
               <p>
+                <strong>Descripción:</strong>{habitacion.descripcion}
+              </p>
+              <p>
                 <strong>Huéspedes:</strong>1-{habitacion.capacidad}
               </p>
               <p>

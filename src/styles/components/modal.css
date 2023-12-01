@@ -42,6 +42,17 @@
     margin-top: 14px;
 }
 
+.modal_contenido .modal_cancelar {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 8px 40px;
+    margin: 0 auto;
+    cursor: pointer;
+    color: black;
+    margin-top: 14px;
+}
+
 .modal_contenido .modal_input {
     display: flex;
     gap: 8px;
