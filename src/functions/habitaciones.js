@@ -111,7 +111,7 @@ export const desactivarHabitacion = async (id) => {
 export const activarHabitacion = async (id) => {
   const habitacion = await obtenerHabitacionPorId(id);
 
-  const res = await fetch(url + habitacion.id, {
+  const res = await fetch(url + `/${habitacion.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...habitacion, estado: true }),
