@@ -78,15 +78,13 @@ export function ReservaPage() {
             </p>
             <p>
               <strong>Precio por noche: </strong>
-              S/{habitacion.precio}
+              S/{habitacion.precio.toFixed(2)}
             </p>
             <p>
               <strong>Total a pagar: </strong>
               S/
               {(
-                dayjs(reserva.fecha_salida, "YYYY-MM-DD").diff(
-                  dayjs(reserva.fecha_llegada, "YYYY-MM-DD")
-                ) 
+                50
               ).toFixed(2)}
             </p>
           </div>

@@ -1,4 +1,4 @@
-const url = "http://localhost:9797/imagenes/";
+const url = "http://localhost:9797/imagenes";
 
 export const obtenerImagenesPorHabitacion = async (habitacion_id) => {
   const res = await fetch(url, {});
@@ -8,14 +8,14 @@ export const obtenerImagenesPorHabitacion = async (habitacion_id) => {
 };
 
 export const obtenerImagenPorId = async (id) => {
-  const res = await fetch(url + id, {});
+  const res = await fetch(url + `/${id}`, {});
   const data = await res.json();
 
   return data;
 };
 
 export const crearImagen = async (imagen) => {
-  const res = await fetch(url + id, {
+  const res = await fetch(url + `/${id}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(imagen),
@@ -28,7 +28,7 @@ export const crearImagen = async (imagen) => {
 };
 
 export const actualizarImagen = async (id, imagen) => {
-  const res = await fetch(url + id, {
+  const res = await fetch(url + `/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(imagen),
@@ -41,7 +41,7 @@ export const actualizarImagen = async (id, imagen) => {
 };
 
 export const eliminarImagen = async (id) => {
-  const res = await fetch(url + id, {
+  const res = await fetch(url + `/${id}`, {
     method: "DELETE",
     
   });
