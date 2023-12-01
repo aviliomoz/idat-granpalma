@@ -4,8 +4,10 @@ import { useState } from "react";
 import { useFiltros } from "../hooks/useFiltros";
 import { crearReserva } from "../functions/reservas";
 import { Modal } from "./modal";
+import { useParams } from "react-router-dom";
 
-export function FormularioReserva({ habitacion }) {
+export function FormularioReserva() {
+  const { id: habitacion_id } = useParams();
   const { llegada, salida, adultos, infantes } = useFiltros();
 
   const [dni, setDni] = useState("");
@@ -27,7 +29,7 @@ export function FormularioReserva({ habitacion }) {
         telefono,
         email,
       },
-      habitacion_id: habitacion.id,
+      habitacion_id,
       fecha_llegada: llegada,
       fecha_salida: salida,
       huespedes: adultos + infantes,
