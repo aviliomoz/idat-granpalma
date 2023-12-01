@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 
 export function FormularioReserva() {
   const { id: habitacion_id } = useParams();
+  // const habitacion_id = 1;
   const { llegada, salida, adultos, infantes } = useFiltros();
 
   const [dni, setDni] = useState("");
