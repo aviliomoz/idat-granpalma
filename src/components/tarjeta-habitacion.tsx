@@ -3,20 +3,27 @@ import { Link } from "react-router-dom";
 import { useFiltros } from "../hooks/useFiltros";
 import { useEffect, useState } from "react";
 import { obtenerHabitacionPorId } from "../functions/habitaciones";
+import { Habitacion } from "../types";
 
-export function TarjetaHabitacion({ id }) {
+type Props = {
+  id: number;
+};
+
+export function TarjetaHabitacion({ id }: Props) {
   const { llegada, salida, adultos, infantes } = useFiltros();
 
-  const [habitacion, setHabitacion] = useState();
+  const [habitacion, setHabitacion] = useState<Habitacion>();
 
   useEffect(() => {
-    obtenerHabitacionPorId(id).then(setHabitacion);
+    obtenerHabitacionPorId(id).then(
+      (habitacion) => habitacion && setHabitacion(habitacion)
+    );
   }, []);
 
   if (!habitacion) return <></>;
 
   return (
-    <article key={habitacion.id_habitaciones}>
+    <article key={habitacion.id}>
       <img src={habitacion.imagenes[0]?.url} />
       <div>
         <h4>{habitacion.nombre}</h4>

@@ -23,7 +23,7 @@ export function MainLayout() {
       else if (reserva && reserva.estado == false)
         return setError("Reserva inactiva.");
       else {
-        setCodigo("")
+        setCodigo("");
         setModal(false);
         navigate("/reserva/" + codigo);
       }
@@ -45,7 +45,7 @@ export function MainLayout() {
                 onChange={(e) => setCodigo(e.target.value)}
               />
             </label>
-            {error && <p className="modal_error">{error}</p>}
+            {<p className="modal_error">{error}</p>}
             <button className="modal_aceptar" onClick={consultarReserva}>
               {consultando ? "Consultando..." : "Buscar"}
             </button>

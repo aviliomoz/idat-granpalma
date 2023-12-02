@@ -7,35 +7,42 @@ import { obtenerClientePorId } from "../functions/clientes";
 import { obtenerHabitacionPorId } from "../functions/habitaciones";
 import { Modal } from "../components/modal";
 import toast from "react-hot-toast";
+import { Cliente, Habitacion, Reserva } from "../types";
+import dayjs from "dayjs";
 
 export function ReservaPage() {
   const { id } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const [cliente, setCliente] = useState();
-  const [reserva, setReserva] = useState();
-  const [habitacion, setHabitacion] = useState();
+  const [cliente, setCliente] = useState<Cliente | undefined>();
+  const [reserva, setReserva] = useState<Reserva | undefined>();
+  const [habitacion, setHabitacion] = useState<Habitacion | undefined>();
 
   const [modal, setModal] = useState(false);
 
   useEffect(() => {
-    obtenerReservaPorId(id).then((reserva) => {
-      setReserva(reserva);
-      obtenerClientePorId(reserva.cliente_id).then((cliente) => {
-        setCliente(cliente);
-        obtenerHabitacionPorId(reserva.habitacion_id).then((habitacion) => {
-          setHabitacion(habitacion);
-        });
+    id &&
+      obtenerReservaPorId(id).then((reserva) => {
+        reserva && setReserva(reserva);
+        reserva &&
+          obtenerClientePorId(reserva.cliente_id).then((cliente) => {
+            cliente && setCliente(cliente);
+            cliente &&
+              obtenerHabitacionPorId(reserva.habitacion_id).then(
+                (habitacion) => {
+                  habitacion && setHabitacion(habitacion);
+                }
+              );
+          });
       });
-    });
   }, []);
 
   const handleAnular = () => {
-    setModal(false)
-    desactivarReserva(id)
-    navigate("/")
-    toast.success("Se anuló la reserva correctamente.")
-  }
+    setModal(false);
+    id && desactivarReserva(id);
+    navigate("/");
+    toast.success("Se anuló la reserva correctamente.");
+  };
 
   if (!cliente || !reserva || !habitacion) return <></>;
 
@@ -45,7 +52,9 @@ export function ReservaPage() {
         <Modal onClose={() => setModal(false)}>
           <p>Estas seguro de que quieres anular la reserva</p>
           {/* <button className="modal_cancelar" onClick={() => setModal(false)}>Cancelar</button> */}
-          <button className="modal_aceptar" onClick={handleAnular}>Eliminar</button>
+          <button className="modal_aceptar" onClick={handleAnular}>
+            Eliminar
+          </button>
         </Modal>
       )}
       <section className="reserva-page">
@@ -67,11 +76,11 @@ export function ReservaPage() {
             </p>
             <p>
               <strong>Celular: </strong>
-              {cliente.celular}
+              {cliente.telefono}
             </p>
             <p>
               <strong>Correo: </strong>
-              {cliente.correo}
+              {cliente.email}
             </p>
           </div>
           <div className="reserva-page__reserva">
@@ -103,7 +112,12 @@ export function ReservaPage() {
             <p>
               <strong>Total a pagar: </strong>
               S/
-              {(50).toFixed(2)}
+              {(
+                dayjs(reserva.fecha_salida, "YYYY-MM-DD").diff(
+                  dayjs(reserva.fecha_llegada, "YYYY-MM-DD"),
+                  "days"
+                ) * habitacion.precio
+              ).toFixed(2)}
             </p>
           </div>
         </div>

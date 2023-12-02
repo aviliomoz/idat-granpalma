@@ -5,13 +5,17 @@ import { FormularioReserva } from "../components/formulario-reserva";
 import { Filtros } from "../components/filtros";
 import { useParams } from "react-router-dom";
 import { obtenerHabitacionPorId } from "../functions/habitaciones";
+import { Habitacion } from "../types";
 
 export function HabitacionPage() {
   const { id } = useParams();
-  const [habitacion, setHabitacion] = useState();
+  const [habitacion, setHabitacion] = useState<Habitacion | undefined>();
 
   useEffect(() => {
-    obtenerHabitacionPorId(id).then(setHabitacion);
+    id &&
+      obtenerHabitacionPorId(parseInt(id)).then(
+        (habitacion) => habitacion && setHabitacion(habitacion)
+      );
   }, []);
 
   if (!habitacion) return <></>;

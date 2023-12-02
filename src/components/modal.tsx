@@ -2,7 +2,12 @@ import "../styles/components/modal.css";
 
 import { X } from "lucide-react";
 
-export function Modal({ children, onClose }) {
+type Props = {
+  children: JSX.Element | JSX.Element[];
+  onClose: () => void;
+};
+
+export function Modal({ children, onClose }: Props) {
   return (
     <section className="modal_background">
       <div className="modal_contenido">

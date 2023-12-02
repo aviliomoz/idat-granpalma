@@ -4,7 +4,7 @@ import { obtenerFecha } from "../functions/fechas";
 
 export function BarraBusqueda() {
   const [fechaLlegada, setFechaLlegada] = useState(obtenerFecha());
-  const [fechaSalida, setFechaSalida] = useState(obtenerFecha(1));
+  const [fechaSalida, setFechaSalida] = useState(obtenerFecha());
   const [cantidadAdultos, setCantidadAdultos] = useState(1);
   const [cantidadInfantes, setCantidadInfantes] = useState(0);
 
@@ -44,10 +44,10 @@ export function BarraBusqueda() {
           min={1}
           value={cantidadAdultos}
           onChange={(e) => {
-            if (e.target.value < 1) {
+            if (parseInt(e.target.value) < 1) {
               setCantidadAdultos(1);
             } else {
-              setCantidadAdultos(e.target.value);
+              setCantidadAdultos(parseInt(e.target.value));
             }
           }}
         />
@@ -59,7 +59,7 @@ export function BarraBusqueda() {
           type="number"
           min={0}
           value={cantidadInfantes}
-          onChange={(e) => setCantidadInfantes(e.target.value)}
+          onChange={(e) => setCantidadInfantes(parseInt(e.target.value))}
         />
       </label>
       <Link

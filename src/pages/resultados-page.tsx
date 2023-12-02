@@ -2,22 +2,19 @@ import { TarjetaHabitacion } from "../components/tarjeta-habitacion";
 import { Filtros } from "../components/filtros";
 import { useEffect, useState } from "react";
 import { useFiltros } from "../hooks/useFiltros";
-import {
-  obtenerHabitaciones,
-  obtenerHabitacionesDisponibles,
-} from "../functions/habitaciones";
+import { obtenerHabitacionesDisponibles } from "../functions/habitaciones";
+import { Habitacion } from "../types";
 
 export function ResultadosPage() {
   const filtros = useFiltros();
 
-  const [habitaciones, setHabitaciones] = useState([]);
+  const [habitaciones, setHabitaciones] = useState<Habitacion[]>([]);
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
     obtenerHabitacionesDisponibles(filtros)
       .then(setHabitaciones)
       .finally(() => setCargando(false));
-    // obtenerHabitaciones().then(setHabitaciones);
   }, []);
 
   return (

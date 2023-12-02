@@ -5,6 +5,8 @@ import { useFiltros } from "../hooks/useFiltros";
 import { crearReserva } from "../functions/reservas";
 import { Modal } from "./modal";
 import { useParams } from "react-router-dom";
+import { Reserva } from "../types";
+import { crearCliente } from "../functions/clientes";
 
 export function FormularioReserva() {
   const { id: habitacion_id } = useParams();
@@ -16,26 +18,35 @@ export function FormularioReserva() {
   const [telefono, setTelefono] = useState("");
   const [email, setEmail] = useState("");
 
-  const [modal, setModal] = useState();
+  const [modal, setModal] = useState<string>();
 
-  const reservar = (e) => {
+  const reservar = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const datos_reserva = {
-      cliente: {
+    if (!habitacion_id) return;
+
+    try {
+      const cliente = await crearCliente({
         dni,
         nombres,
         apellidos,
         telefono,
         email,
-      },
-      habitacion_id: parseInt(habitacion_id),
-      fecha_llegada: llegada,
-      fecha_salida: salida,
-      huespedes: adultos + infantes,
-    };
+      });
 
-    crearReserva(datos_reserva).then((data) => setModal(data.id));
+      if (!cliente) throw new Error();
+
+      const datos_reserva: Omit<Reserva, "id"> = {
+        cliente_id: cliente.id,
+        habitacion_id: parseInt(habitacion_id),
+        fecha_llegada: llegada,
+        fecha_salida: salida,
+        huespedes: adultos + infantes,
+        estado: true,
+      };
+
+      crearReserva(datos_reserva).then((data) => data && setModal(data.id));
+    } catch (error) {}
   };
 
   const handleCloseModal = () => {
