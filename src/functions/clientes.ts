@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import { Cliente } from "../types";
 
 const url = "http://localhost:9797/clientes";
