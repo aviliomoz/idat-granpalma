@@ -12,7 +12,7 @@ export const obtenerClientes = async () => {
 
     return data;
   } catch (error) {
-    toast.error("Error al obtener los clientes");
+    // toast.error("Error al obtener los clientes");
     return [];
   }
 };
@@ -26,7 +26,7 @@ export const obtenerClientePorId = async (id: number) => {
 
     return data;
   } catch (error) {
-    toast.error("Error al obtener el cliente");
+    // toast.error("Error al obtener el cliente");
     return null;
   }
 };
@@ -43,7 +43,7 @@ export const obtenerClientePorDni = async (dni: string) => {
 
     return cliente;
   } catch (error) {
-    toast.error("Error al obtener el cliente");
+    // toast.error("Error al obtener el cliente");
     return null;
   }
 };
@@ -70,7 +70,7 @@ export const crearCliente = async (datos_cliente: Omit<Cliente, "id">) => {
 
     return data;
   } catch (error) {
-    toast.error("Error al crear el cliente");
+    // toast.error("Error al crear el cliente");
     return null;
   }
 };
@@ -91,7 +91,7 @@ export const actualizarCliente = async (cliente: Cliente) => {
 
     return data;
   } catch (error) {
-    toast.error("Error al actualizar el cliente");
+    // toast.error("Error al actualizar el cliente");
     return null;
   }
 };
@@ -114,7 +114,7 @@ export const desactivarCliente = async (id: number) => {
 
     return data;
   } catch (error) {
-    toast.error("Error al desactivar el cliente");
+    // toast.error("Error al desactivar el cliente");
     return null;
   }
 };
@@ -137,7 +137,7 @@ export const activarCliente = async (id: number) => {
 
     return data;
   } catch (error) {
-    toast.error("Error al activar el cliente");
+    // toast.error("Error al activar el cliente");
     return null;
   }
 };

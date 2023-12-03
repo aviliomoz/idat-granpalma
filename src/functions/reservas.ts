@@ -43,7 +43,7 @@ export const obtenerReservaPorId = async (id: string) => {
     return data;
     // return Object.entries(data).length == 0 ? null : data;
   } catch (error) {
-    toast.error("Error al obtener la reserva");
+    // toast.error("Error al obtener la reserva");
     return null;
   }
 };

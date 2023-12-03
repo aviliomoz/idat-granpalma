@@ -15,11 +15,11 @@ export function BarraBusqueda() {
   }, [fechaLlegada]);
 
   return (
-    <form className="barra-busqueda">
+    <form className="bg-white p-10 rounded-md flex gap-6 items-center">
       <label>
-        <span>Llegada:</span>
+        <span className="font-semibold">Llegada:</span>
         <input
-          className="input-fecha"
+          className="border-slate-200 border px-3 py-1 rounded-md ml-3 w-36"
           type="date"
           value={fechaLlegada}
           min={obtenerFecha()}
@@ -27,9 +27,9 @@ export function BarraBusqueda() {
         />
       </label>
       <label>
-        <span>Salida:</span>
+        <span className="font-semibold">Salida:</span>
         <input
-          className="input-fecha"
+          className="border-slate-200 border px-3 py-1 rounded-md ml-3 w-36"
           type="date"
           value={fechaSalida}
           min={obtenerFecha(fechaLlegada, 1)}
@@ -37,9 +37,9 @@ export function BarraBusqueda() {
         />
       </label>
       <label>
-        <span>Adultos:</span>
+        <span className="font-semibold">Adultos:</span>
         <input
-          className="input-numero"
+          className="border-slate-200 border px-3 py-1 rounded-md ml-3 w-16"
           type="number"
           min={1}
           value={cantidadAdultos}
@@ -53,9 +53,9 @@ export function BarraBusqueda() {
         />
       </label>
       <label>
-        <span>Niños:</span>
+        <span className="font-semibold">Niños:</span>
         <input
-          className="input-numero"
+          className="border-slate-200 border px-3 py-1 rounded-md ml-3 w-16"
           type="number"
           min={0}
           value={cantidadInfantes}
@@ -63,6 +63,7 @@ export function BarraBusqueda() {
         />
       </label>
       <Link
+      className="bg-slate-950 hover:bg-slate-900 px-12 py-1 rounded-md text-white"
         to={`/habitaciones?llegada=${fechaLlegada}&salida=${fechaSalida}&adultos=${cantidadAdultos}&infantes=${cantidadInfantes}`}
       >
         Buscar

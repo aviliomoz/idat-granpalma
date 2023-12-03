@@ -1,5 +1,3 @@
-import "../styles/pages/reserva-page.css";
-
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { desactivarReserva, obtenerReservaPorId } from "../functions/reservas";
@@ -9,6 +7,7 @@ import { Modal } from "../components/modal";
 import toast from "react-hot-toast";
 import { Cliente, Habitacion, Reserva } from "../types";
 import dayjs from "dayjs";
+import { Trash } from "lucide-react";
 
 export function ReservaPage() {
   const { id } = useParams();
@@ -50,67 +49,69 @@ export function ReservaPage() {
     <>
       {modal && (
         <Modal onClose={() => setModal(false)}>
-          <p>Estas seguro de que quieres anular la reserva</p>
+          <p>¿Estás seguro de que quieres anular la reserva?</p>
           {/* <button className="modal_cancelar" onClick={() => setModal(false)}>Cancelar</button> */}
-          <button className="modal_aceptar" onClick={handleAnular}>
+          <div className="flex justify-center">
+          <button className="bg-slate-950 hover:bg-slate-900 px-16 py-1 rounded text-white mt-6 text-sm w-auto mx-auto" onClick={handleAnular}>
             Eliminar
           </button>
+          </div>
         </Modal>
       )}
-      <section className="reserva-page">
-        <h3>Tu reserva:</h3>
-        <div className="reserva-page__contenedor">
-          <div className="reserva-page__cliente">
-            <h4>Datos del cliente:</h4>
+      <section className="flex justify-center items-center flex-col gap-8 pt-10 mb-20">
+        <h3 className="text-xl font-medium">Tu reserva:</h3>
+        <div className="border border-slate-300 rounded-md py-8 px-14 flex gap-16">
+          <div>
+            <h4 className="font-semibold mb-4">Datos del cliente:</h4>
             <p>
-              <strong>DNI: </strong>
+              <span className="font-semibold">DNI: </span>
               {cliente.dni}
             </p>
             <p>
-              <strong>Nombres: </strong>
+              <span className="font-semibold">Nombres: </span>
               {cliente.nombres}
             </p>
             <p>
-              <strong>Apellidos: </strong>
+              <span className="font-semibold">Apellidos: </span>
               {cliente.apellidos}
             </p>
             <p>
-              <strong>Celular: </strong>
+              <span className="font-semibold">Celular: </span>
               {cliente.telefono}
             </p>
             <p>
-              <strong>Correo: </strong>
+              <span className="font-semibold">Correo: </span>
               {cliente.email}
             </p>
           </div>
-          <div className="reserva-page__reserva">
-            <h4>Datos de la reserva:</h4>
+          <div>
+            <h4 className="font-semibold mb-4">Datos de la reserva:</h4>
             <p>
-              <strong>Código: </strong>
+              <span className="font-semibold">Código: </span>
               {reserva.id}
             </p>
             <p>
-              <strong>Fecha de llegada: </strong>
+              <span className="font-semibold">Fecha de llegada: </span>
               {reserva.fecha_llegada}
             </p>
             <p>
-              <strong>Fecha de salida: </strong>
+              <span className="font-semibold">Fecha de salida: </span>
               {reserva.fecha_salida}
             </p>
             <p>
-              <strong>Cantidad de huéspedes: </strong>
+              <span className="font-semibold">Cantidad de huéspedes: </span>
               {reserva.huespedes}
             </p>
             <p>
-              <strong>Habitación: </strong>
+              <span className="font-semibold">Habitación: </span>
               {habitacion.nombre}
             </p>
             <p>
-              <strong>Precio por noche: </strong>
+              <span className="font-semibold">Precio por noche: </span>
               S/{habitacion.precio.toFixed(2)}
             </p>
             <p>
-              <strong>Total a pagar: </strong>
+              <span className="font-semibold">Total a pagar: </span>
               S/
               {(
                 dayjs(reserva.fecha_salida, "YYYY-MM-DD").diff(
@@ -121,9 +122,15 @@ export function ReservaPage() {
             </p>
           </div>
         </div>
-        <div className="reserva-page__botones">
+        <div className="flex gap-10 items-center">
           <Link to={"/"}>Volver al inicio</Link>
-          <button onClick={() => setModal(true)}>Anular reserva</button>
+          <button
+            className="bg-slate-950 hover:bg-slate-900 text-white px-6 py-1 rounded-md flex items-center gap-3"
+            onClick={() => setModal(true)}
+          >
+            <Trash className="w-4" />
+            Anular reserva
+          </button>
         </div>
       </section>
     </>

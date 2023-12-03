@@ -19,14 +19,14 @@ export function ResultadosPage() {
 
   return (
     <>
-      <section className="resultados">
-        <div className="resultados_titulo">
-          <h3>Resultados de la búsqueda:</h3>
+      <section>
+        <div className="rounded-md my-4 py-4 px-8 flex items-center justify-between">
+          <h3 className="font-semibold">Resultados de la búsqueda:</h3>
           <Filtros />
         </div>
-        <div className="resultados_habitaciones">
+        <div className="flex flex-wrap gap-8 px-12 py-6 min-h-[350px] pb-20">
           {!cargando && habitaciones.length == 0 && (
-            <p className="mensaje_sin_resultados">
+            <p className="text-center text-gray-700 mt-20">
               No hay habitaciones disponibles para las fechas y/o número de
               huéspedes seleccionados.
             </p>

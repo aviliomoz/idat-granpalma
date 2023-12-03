@@ -19,7 +19,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
-      <Toaster />
+      <Toaster position="bottom-right"/>
     </>
   );
 }

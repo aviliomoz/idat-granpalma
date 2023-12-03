@@ -1,5 +1,3 @@
-import "../styles/pages/habitacion-page.css";
-
 import { useEffect, useState } from "react";
 import { FormularioReserva } from "../components/formulario-reserva";
 import { Filtros } from "../components/filtros";
@@ -22,30 +20,34 @@ export function HabitacionPage() {
 
   return (
     <>
-      <section className="habitacion-page">
-        <div className="habitacion-page__encabezado">
-          <h3>{habitacion.nombre}</h3>
+      <section className="mb-20">
+        <div className="rounded-md my-4 py-4 px-8 flex items-center justify-between">
+          <h3 className="font-semibold">Resultados de la búsqueda:</h3>
           <Filtros />
         </div>
-        <div className="habitacion-page__contenedor">
-          <div className="habitacion-page__contenido">
-            <img src={habitacion.imagenes[0]?.url} />
-            <div className="habitacion-page__contenido--detalles">
-              <h4>Características de la habitación:</h4>
+        <div className="flex gap-10 px-16 justify-between">
+          <div className="flex flex-col gap-4 w-3/5">
+            <img className="rounded" src={habitacion.imagenes[0]?.url} />
+            <div className="">
+              <h4 className="font-semibold mb-4">
+                Características de la habitación:
+              </h4>
               <p>
-                <strong>Descripción:</strong>
+                <span className="font-semibold mr-2">Descripción:</span>
                 {habitacion.descripcion}
               </p>
               <p>
-                <strong>Huéspedes:</strong>1-{habitacion.capacidad}
+                <span className="font-semibold mr-2">Huéspedes:</span>1-
+                {habitacion.capacidad}
               </p>
               <p>
-                <strong>Precio:</strong>S/{habitacion.precio.toFixed(2)}
+                <span className="font-semibold mr-2">Precio:</span>S/
+                {habitacion.precio.toFixed(2)}
               </p>
             </div>
           </div>
 
-          <div className="habitacion-page__formulario">
+          <div className="w-2/5 flex justify-end h-max">
             <FormularioReserva />
           </div>
         </div>
