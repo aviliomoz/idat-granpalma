@@ -35,7 +35,7 @@ export function Footer() {
               <a href="#">Libro de Reclamaciones</a>
             </p>
             <p>
-              <a href="#">Iniciar Sesión</a>
+              <Link to="/login">Iniciar Sesión</Link>
             </p>
           </div>
         </div>
@@ -43,8 +43,8 @@ export function Footer() {
         {/* Políticas de servicio */}
         <div className="mt-12 text-center">
           <p>
-            <Link to={"#"}>Políticas de Servicio</Link> - © 2023 Hotel Gran
-            Palma
+            <Link to={"/condiciones"}>Políticas de Servicio</Link> - © 2023
+            Hotel Gran Palma
           </p>
         </div>
       </footer>

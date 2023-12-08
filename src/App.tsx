@@ -5,6 +5,10 @@ import { HomePage } from "./pages/home-page";
 import { ResultadosPage } from "./pages/resultados-page";
 import { HabitacionPage } from "./pages/habitacion-page";
 import { ReservaPage } from "./pages/reserva-page";
+import { CondicionesPage } from "./pages/condiciones-page";
+import { LoginLayout } from "./layouts/login-layout";
+import { DashboardPage } from "./pages/dashboard-page";
+import { LoginPage } from "./pages/login-page";
 
 function App() {
   return (
@@ -16,10 +20,15 @@ function App() {
             <Route path="/habitaciones" element={<ResultadosPage />} />
             <Route path="/habitaciones/:id" element={<HabitacionPage />} />
             <Route path="/reserva/:id" element={<ReservaPage />} />
+            <Route path="/condiciones" element={<CondicionesPage />} />
+            <Route path="/login" element={<LoginPage />} />
+          </Route>
+          <Route element={<LoginLayout />}>
+            <Route path="/dashboard" element={<DashboardPage />} />
           </Route>
         </Routes>
       </Router>
-      <Toaster position="bottom-right"/>
+      <Toaster position="bottom-right" />
     </>
   );
 }
