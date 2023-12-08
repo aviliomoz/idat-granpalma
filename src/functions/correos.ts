@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import { Correo } from "../types";
 
-const url = "http://localhost:9797/correos";
+const url = "http://localhost:9797/correo";
 
 export const crearCorreo = async (datos_correo: Omit<Correo, "id">) => {
   try {
