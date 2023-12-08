@@ -45,11 +45,15 @@ export function FormularioReserva() {
       };
 
       crearReserva(datos_reserva).then((data) => {
-        console.log(data);
-        toast.success("Reserva generada exitosamente");
-        setModal(data?.id);
+        if (data) {
+          console.log(data);
+          toast.success("Reserva generada exitosamente");
+          setModal(data.id);
+        }
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleCloseModal = () => {
