@@ -1,9 +1,20 @@
 import { useState } from "react";
 // import toast from "react-hot-toast";
 import { crearCorreo } from "../functions/correos";
+import toast from "react-hot-toast";
 
 export function Info() {
   const [email, setEmail] = useState<string>("");
+
+  const registrarCorreo = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const correo = await crearCorreo({ correo: email });
+
+    if (correo) {
+      toast.success("Gracias por registrarte");
+    }
+  };
 
   return (
     <section className="mb-24">
@@ -15,10 +26,7 @@ export function Info() {
       </p>
       <form
         className="w-full flex justify-center mt-10 items-center"
-        onSubmit={(e) => {
-          e.preventDefault();
-          crearCorreo({correo: email})
-        }}
+        onSubmit={registrarCorreo}
       >
         <label>
           <span>Correo:</span>

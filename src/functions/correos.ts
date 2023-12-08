@@ -16,9 +16,7 @@ export const crearCorreo = async (datos_correo: Omit<Correo, "id">) => {
     if (!res.ok) throw new Error();
 
     const data: Correo = await res.json();
-
-    console.log(data);
-    toast.success("Gracias por registrarte");
+    
     return data;
   } catch (error) {
     // toast.error("Error al crear el cliente");
