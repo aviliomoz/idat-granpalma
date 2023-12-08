@@ -39,3 +39,8 @@ export type Filtro = {
   adultos: number;
   infantes: number;
 };
+
+export type Correo = {
+  id: number;
+  correo: string;
+}

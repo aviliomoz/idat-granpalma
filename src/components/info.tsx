@@ -1,5 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { crearCorreo } from "../functions/correos";
 
 export function Info() {
   const [email, setEmail] = useState<string>("");
@@ -16,6 +17,7 @@ export function Info() {
         className="w-full flex justify-center mt-10 items-center"
         onSubmit={(e) => {
           e.preventDefault();
+          crearCorreo({correo: email})
           toast.success("Gracias por registrarte");
         }}
       >
