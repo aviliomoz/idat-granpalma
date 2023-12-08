@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import { Reserva } from "../types";
 
 const url = "http://localhost:9797/reservas";
@@ -28,7 +28,7 @@ export const obtenerReservas = async () => {
 
     return data;
   } catch (error) {
-    toast.error("Error al obtener las reservas");
+    // toast.error("Error al obtener las reservas");
     return [];
   }
 };
@@ -70,9 +70,10 @@ export const crearReserva = async (datos_reserva: Omit<Reserva, "id">) => {
 
     const data: Reserva = await res.json();
 
+    console.log(data)
     return data;
   } catch (error) {
-    toast.error("Error al crear la reserva");
+    // toast.error("Error al crear la reserva");
     return null;
   }
 };
@@ -91,7 +92,7 @@ export const actualizarReserva = async (reserva: Reserva) => {
 
     return data;
   } catch (error) {
-    toast.error("Error al actualizar la reserva");
+    // toast.error("Error al actualizar la reserva");
     return null;
   }
 };
@@ -114,7 +115,7 @@ export const desactivarReserva = async (id: string) => {
 
     return data;
   } catch (error) {
-    toast.error("Error al desactivar la reserva");
+    // toast.error("Error al desactivar la reserva");
     return null;
   }
 };
@@ -137,7 +138,7 @@ export const activarReserva = async (id: string) => {
 
     return data;
   } catch (error) {
-    toast.error("Error al activar la reserva");
+    // toast.error("Error al activar la reserva");
     return null;
   }
 };
