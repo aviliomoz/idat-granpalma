@@ -69,8 +69,6 @@ export const crearReserva = async (datos_reserva: Omit<Reserva, "id">) => {
     if (!res.ok) throw new Error();
 
     const data: Reserva = await res.json();
-
-    console.log(data)
     return data;
   } catch (error) {
     // toast.error("Error al crear la reserva");
@@ -80,7 +78,7 @@ export const crearReserva = async (datos_reserva: Omit<Reserva, "id">) => {
 
 export const actualizarReserva = async (reserva: Reserva) => {
   try {
-    const res = await fetch(`${url}/${reserva.id}`, {
+    const res = await fetch(`${url}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reserva),
@@ -103,7 +101,7 @@ export const desactivarReserva = async (id: string) => {
 
     if (!reserva) throw new Error();
 
-    const res = await fetch(`${url}/${reserva.id}`, {
+    const res = await fetch(`${url}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...reserva, estado: false }),
@@ -126,7 +124,7 @@ export const activarReserva = async (id: string) => {
 
     if (!reserva) throw new Error();
 
-    const res = await fetch(`${url}/${reserva.id}`, {
+    const res = await fetch(`${url}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...reserva, estado: true }),

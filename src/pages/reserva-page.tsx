@@ -38,9 +38,11 @@ export function ReservaPage() {
 
   const handleAnular = () => {
     setModal(false);
-    id && desactivarReserva(id);
-    navigate("/");
-    toast.success("Se anuló la reserva correctamente.");
+    id &&
+      desactivarReserva(id).then(() => {
+        navigate("/");
+        toast.success("Se anuló la reserva correctamente.");
+      });
   };
 
   if (!cliente || !reserva || !habitacion) return <></>;
@@ -52,9 +54,12 @@ export function ReservaPage() {
           <p>¿Estás seguro de que quieres anular la reserva?</p>
           {/* <button className="modal_cancelar" onClick={() => setModal(false)}>Cancelar</button> */}
           <div className="flex justify-center">
-          <button className="bg-slate-950 hover:bg-slate-900 px-16 py-1 rounded text-white mt-6 text-sm w-auto mx-auto" onClick={handleAnular}>
-            Eliminar
-          </button>
+            <button
+              className="bg-slate-950 hover:bg-slate-900 px-16 py-1 rounded text-white mt-6 text-sm w-auto mx-auto"
+              onClick={handleAnular}
+            >
+              Eliminar
+            </button>
           </div>
         </Modal>
       )}
