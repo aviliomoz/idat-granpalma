@@ -18,7 +18,6 @@ export function Info() {
         onSubmit={(e) => {
           e.preventDefault();
           crearCorreo({correo: email})
-          toast.success("Gracias por registrarte");
         }}
       >
         <label>

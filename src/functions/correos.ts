@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { Correo } from "../types";
 
 const url = "http://localhost:9797/correos";
@@ -16,6 +17,8 @@ export const crearCorreo = async (datos_correo: Omit<Correo, "id">) => {
 
     const data: Correo = await res.json();
 
+    console.log(data);
+    toast.success("Gracias por registrarte");
     return data;
   } catch (error) {
     // toast.error("Error al crear el cliente");
