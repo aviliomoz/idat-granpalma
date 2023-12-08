@@ -44,12 +44,11 @@ export function FormularioReserva() {
         estado: true,
       };
 
-      const reserva = await crearReserva(datos_reserva);
-
-      if (reserva) {
+      crearReserva(datos_reserva).then((data) => {
+        console.log(data);
         toast.success("Reserva generada exitosamente");
-        setModal(reserva.id);
-      }
+        setModal(data?.id);
+      });
     } catch (error) {}
   };
 

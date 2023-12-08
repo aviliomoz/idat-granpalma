@@ -9,11 +9,11 @@ export function Info() {
   const registrarCorreo = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const correo = await crearCorreo({ correo: email });
-
-    if (correo) {
+    crearCorreo({ correo: email }).then((data) => {
+      console.log(data);
       toast.success("Gracias por registrarte");
-    }
+      setEmail("")
+    });
   };
 
   return (
