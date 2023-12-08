@@ -56,13 +56,13 @@ export const crearReserva = async (datos_reserva: Omit<Reserva, "id">) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        id: codigo,
         cliente_id: datos_reserva.cliente_id,
         habitacion_id: datos_reserva.habitacion_id,
         fecha_llegada: datos_reserva.fecha_llegada,
         fecha_salida: datos_reserva.fecha_salida,
         huespedes: datos_reserva.huespedes,
         estado: datos_reserva.estado,
-        id: codigo,
       }),
     });
 
