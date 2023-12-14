@@ -9,6 +9,9 @@ import { CondicionesPage } from "./pages/condiciones-page";
 import { LoginLayout } from "./layouts/login-layout";
 import { DashboardPage } from "./pages/dashboard-page";
 import { LoginPage } from "./pages/login-page";
+import { ReservasPage } from "./pages/reservas-page";
+import { CrearHabitacionPage } from "./pages/crear-habitacion-page";
+import { EditarHabitacionPage } from "./pages/editar-habitacion-page";
 
 function App() {
   return (
@@ -24,7 +27,16 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
           </Route>
           <Route element={<LoginLayout />}>
-            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard/:fecha" element={<DashboardPage />} />
+            <Route
+              path="/dashboard/crear-habitacion"
+              element={<CrearHabitacionPage />}
+            />
+            <Route
+              path="/dashboard/habitacion/:id"
+              element={<EditarHabitacionPage />}
+            />
+            <Route path="/reservas" element={<ReservasPage />} />
           </Route>
         </Routes>
       </Router>

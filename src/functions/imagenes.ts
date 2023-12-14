@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { Imagen, Cliente } from "../types";
+import { Imagen } from "../types";
 
 const url = "http://localhost:9797/imagenes";
 
@@ -33,7 +33,7 @@ export const obtenerImagenPorId = async (id: number) => {
   }
 };
 
-export const crearImagen = async (imagen: Omit<Cliente, "id">) => {
+export const crearImagen = async (imagen: Omit<Imagen, "id">) => {
   try {
     const res = await fetch(url, {
       method: "POST",
@@ -43,7 +43,7 @@ export const crearImagen = async (imagen: Omit<Cliente, "id">) => {
 
     if (!res.ok) throw new Error();
 
-    const data: Cliente = await res.json();
+    const data: Imagen = await res.json();
 
     return data;
   } catch (error) {

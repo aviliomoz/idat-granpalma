@@ -32,7 +32,7 @@ export function Galeria() {
                 <img
                   key={index}
                   src={imagen.src}
-                  className="w-full rounded-md cursor-pointer"
+                  className="w-full rounded-md cursor-pointer h-52"
                   onClick={() => {
                     setModal(imagen.src);
                   }}

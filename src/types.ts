@@ -20,7 +20,7 @@ export type Habitacion = {
   precio: number;
   capacidad: number;
   estado: boolean;
-  imagenes: Imagen[];
+  imagenes?: Imagen[];
 };
 
 export type Reserva = {

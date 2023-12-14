@@ -90,7 +90,7 @@ export const obtenerHabitacionPorId = async (id: number) => {
   }
 };
 
-export const crearHabitacion = async (habitacion: Omit<Habitacion, "id">) => {
+export const crearHabitacion = async (habitacion: Partial<Habitacion>) => {
   try {
     const res = await fetch(url, {
       method: "POST",

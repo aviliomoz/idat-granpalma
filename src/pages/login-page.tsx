@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +12,7 @@ export function LoginPage() {
 
     if (password == "1234") {
       localStorage.setItem("gp-login", "1234");
-      navigate("/dashboard");
+      navigate("/dashboard/" + dayjs().format("YYYY-MM-DD"));
     } else {
       toast.error("Contraseña incorrecta");
     }

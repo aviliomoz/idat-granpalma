@@ -27,7 +27,7 @@ export function TarjetaHabitacion({ id }: Props) {
       key={habitacion.id}
       className="w-[30%] min-w-[300px]: border border-slate-300 p-4 rounded "
     >
-      <img className="rounded mb-4" src={habitacion.imagenes[0]?.url} />
+      <img className="rounded mb-4 h-44 w-full" src={habitacion.imagenes[0]?.url} />
       <div className="flex justify-between items-center">
         <h4 className="font-semibold">{habitacion.nombre}</h4>
         <span className="flex items-center gap-2 min-w-max">
