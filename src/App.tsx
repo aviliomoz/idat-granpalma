@@ -12,6 +12,7 @@ import { LoginPage } from "./pages/login-page";
 import { ReservasPage } from "./pages/reservas-page";
 import { CrearHabitacionPage } from "./pages/crear-habitacion-page";
 import { EditarHabitacionPage } from "./pages/editar-habitacion-page";
+import { ReservasLayout } from "./layouts/reservas-layout";
 
 function App() {
   return (
@@ -36,7 +37,9 @@ function App() {
               path="/dashboard/habitacion/:id"
               element={<EditarHabitacionPage />}
             />
-            <Route path="/reservas" element={<ReservasPage />} />
+            <Route element={<ReservasLayout />}>
+              <Route path="/reservas" element={<ReservasPage />} />
+            </Route>
           </Route>
         </Routes>
       </Router>

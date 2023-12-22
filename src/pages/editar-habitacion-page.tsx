@@ -56,7 +56,7 @@ export function EditarHabitacionPage() {
     <>
       <section className="bg-white m-3 rounded-md p-6">
         <div className="flex items-center justify-between">
-          <h3 className="font-semibold text-lg">Crear habitación</h3>
+          <h3 className="font-semibold text-lg">Editar habitación</h3>
           <button onClick={() => navigate(-1)}>Cancelar</button>
         </div>
         <form onSubmit={handleSubmit} className="flex flex-col py-4">

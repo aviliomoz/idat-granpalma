@@ -101,7 +101,7 @@ export const desactivarReserva = async (id: string) => {
 
     if (!reserva) throw new Error();
 
-    const res = await fetch(`${url}`, {
+    const res = await fetch(`${url}/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...reserva, estado: false }),

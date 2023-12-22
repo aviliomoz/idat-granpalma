@@ -1,0 +1,565 @@
+{
+  "habitaciones": [
+    {
+      "id": 1,
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true
+    },
+    {
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true
+    },
+    {
+      "id": 4,
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true
+    },
+    {
+      "id": 5,
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true
+    },
+    {
+      "id": 6,
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true
+    },
+    {
+      "id": 7,
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true
+    },
+    {
+      "id": 8,
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true
+    },
+    {
+      "id": 9,
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true
+    },
+    {
+      "id": 10,
+      "nombre": "Habitación Simple",
+      "descripcion": "Habitación de 25 metros cuadrados para 1 persona",
+      "precio": 45,
+      "capacidad": 1,
+      "estado": true
+    },
+    {
+      "id": 11,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 12,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 13,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 14,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 15,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 16,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 17,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 18,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 19,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 20,
+      "nombre": "Habitación Doble Simple",
+      "descripcion": "Habitación de 30 metros cuadrados para 2 persona",
+      "precio": 80,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 21,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 22,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 23,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 24,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 25,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 26,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 27,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 28,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 29,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 30,
+      "nombre": "Habitación Doble Matrimonial",
+      "descripcion": "Habitación de 35 metros cuadrados para 2 persona con jacuzzi",
+      "precio": 100,
+      "capacidad": 2,
+      "estado": true
+    },
+    {
+      "id": 31,
+      "nombre": "Habitación Familiar",
+      "descripcion": "Habitación de 40 metros ambiente perfecto para familias",
+      "precio": 140,
+      "capacidad": 5,
+      "estado": true
+    },
+    {
+      "nombre": "Habitación Familiar",
+      "descripcion": "Habitación de 40 metros ambiente perfecto para familias",
+      "precio": 140,
+      "capacidad": 5,
+      "estado": false,
+      "id": 32
+    },
+    {
+      "id": 33,
+      "nombre": "Habitación Familiar",
+      "descripcion": "Habitación de 40 metros ambiente perfecto para familias",
+      "precio": 140,
+      "capacidad": 5,
+      "estado": true
+    },
+    {
+      "id": 34,
+      "nombre": "Habitación Familiar",
+      "descripcion": "Habitación de 40 metros ambiente perfecto para familias",
+      "precio": 140,
+      "capacidad": 5,
+      "estado": true
+    },
+    {
+      "id": 35,
+      "nombre": "Habitación Familiar",
+      "descripcion": "Habitación de 40 metros ambiente perfecto para familias",
+      "precio": 140,
+      "capacidad": 5,
+      "estado": true
+    }
+  ],
+  "reservas": [
+    {
+      "id": "ZZUHKT",
+      "cliente_id": 1,
+      "habitacion_id": 3,
+      "fecha_llegada": "2023-12-14",
+      "fecha_salida": "2023-12-15",
+      "huespedes": 1,
+      "estado": false
+    },
+    {
+      "id": "M7DV34",
+      "cliente_id": 2,
+      "habitacion_id": 1,
+      "fecha_llegada": "2023-12-19",
+      "fecha_salida": "2023-12-22",
+      "huespedes": 6,
+      "estado": false
+    },
+    {
+      "id": "HM7RFL",
+      "cliente_id": 3,
+      "habitacion_id": 31,
+      "fecha_llegada": "2023-12-27",
+      "fecha_salida": "2023-12-30",
+      "huespedes": 5,
+      "estado": true
+    },
+    {
+      "id": "KXCDCJ",
+      "cliente_id": 1,
+      "habitacion_id": 32,
+      "fecha_llegada": "2024-01-10",
+      "fecha_salida": "2024-01-12",
+      "huespedes": 3,
+      "estado": true
+    },
+    {
+      "id": "4NWPZ6",
+      "cliente_id": 4,
+      "habitacion_id": 3,
+      "fecha_llegada": "2023-12-21",
+      "fecha_salida": "2023-12-22",
+      "huespedes": 1,
+      "estado": true
+    },
+    {
+      "id": "HY2C9J",
+      "cliente_id": 5,
+      "habitacion_id": 12,
+      "fecha_llegada": "2023-12-23",
+      "fecha_salida": "2023-12-24",
+      "huespedes": 2,
+      "estado": true
+    }
+  ],
+  "clientes": [
+    {
+      "dni": "12345678",
+      "nombres": "Avilio",
+      "apellidos": "Muñoz",
+      "telefono": "123456789",
+      "email": "avilio@correo.com",
+      "id": 1
+    },
+    {
+      "dni": "456789123",
+      "nombres": "Maria",
+      "apellidos": "Lopez",
+      "telefono": "456789123",
+      "email": "andres@correo.com",
+      "id": 2
+    },
+    {
+      "dni": "12345688",
+      "nombres": "Juan",
+      "apellidos": "Perez",
+      "telefono": "456789123",
+      "email": "juan@correo.com",
+      "id": 3
+    },
+    {
+      "dni": "45678965",
+      "nombres": "Juan",
+      "apellidos": "Castro",
+      "telefono": "123654789",
+      "email": "juan@correo.com",
+      "id": 4
+    },
+    {
+      "dni": "698745125",
+      "nombres": "Carlos",
+      "apellidos": "Santana",
+      "telefono": "654782139",
+      "email": "carlos@gmail.com",
+      "id": 5
+    }
+  ],
+  "imagenes": [
+    {
+      "id": 1,
+      "habitacion_id": 1,
+      "url": "https://www.hipotels.com/content/imgsxml/galerias/panel_habitaciones/1/pre-hipocampoplaya-individual525.jpg"
+    },
+    {
+      "id": 2,
+      "habitacion_id": 2,
+      "url": "https://www.hipotels.com/content/imgsxml/galerias/panel_habitaciones/1/pre-hipocampoplaya-individual525.jpg"
+    },
+    {
+      "id": 3,
+      "habitacion_id": 3,
+      "url": "https://www.hipotels.com/content/imgsxml/galerias/panel_habitaciones/1/pre-hipocampoplaya-individual525.jpg"
+    },
+    {
+      "id": 4,
+      "habitacion_id": 4,
+      "url": "https://www.hipotels.com/content/imgsxml/galerias/panel_habitaciones/1/pre-hipocampoplaya-individual525.jpg"
+    },
+    {
+      "id": 5,
+      "habitacion_id": 5,
+      "url": "https://www.hipotels.com/content/imgsxml/galerias/panel_habitaciones/1/pre-hipocampoplaya-individual525.jpg"
+    },
+    {
+      "id": 6,
+      "habitacion_id": 6,
+      "url": "https://www.elprincipehotel.com/dms/monoHotel-ElPrincipe/habitaciones/Individual/individual2.jpg"
+    },
+    {
+      "id": 7,
+      "habitacion_id": 7,
+      "url": "https://www.elprincipehotel.com/dms/monoHotel-ElPrincipe/habitaciones/Individual/individual2.jpg"
+    },
+    {
+      "id": 8,
+      "habitacion_id": 8,
+      "url": "https://www.elprincipehotel.com/dms/monoHotel-ElPrincipe/habitaciones/Individual/individual2.jpg"
+    },
+    {
+      "id": 9,
+      "habitacion_id": 9,
+      "url": "https://www.elprincipehotel.com/dms/monoHotel-ElPrincipe/habitaciones/Individual/individual2.jpg"
+    },
+    {
+      "id": 10,
+      "habitacion_id": 10,
+      "url": "https://www.elprincipehotel.com/dms/monoHotel-ElPrincipe/habitaciones/Individual/individual2.jpg"
+    },
+    {
+      "id": 11,
+      "habitacion_id": 11,
+      "url": "https://hotel-playa-marina-mazatlan.hotelmix.es/data/Photos/OriginalPhoto/12149/1214991/1214991646/Hotel-Playa-Marina-Mazatlan-Exterior.JPEG"
+    },
+    {
+      "id": 12,
+      "habitacion_id": 12,
+      "url": "https://hotel-playa-marina-mazatlan.hotelmix.es/data/Photos/OriginalPhoto/12149/1214991/1214991646/Hotel-Playa-Marina-Mazatlan-Exterior.JPEG"
+    },
+    {
+      "id": 13,
+      "habitacion_id": 13,
+      "url": "https://hotel-playa-marina-mazatlan.hotelmix.es/data/Photos/OriginalPhoto/12149/1214991/1214991646/Hotel-Playa-Marina-Mazatlan-Exterior.JPEG"
+    },
+    {
+      "id": 14,
+      "habitacion_id": 14,
+      "url": "https://hotel-playa-marina-mazatlan.hotelmix.es/data/Photos/OriginalPhoto/12149/1214991/1214991646/Hotel-Playa-Marina-Mazatlan-Exterior.JPEG"
+    },
+    {
+      "id": 15,
+      "habitacion_id": 15,
+      "url": "https://hotel-playa-marina-mazatlan.hotelmix.es/data/Photos/OriginalPhoto/12149/1214991/1214991646/Hotel-Playa-Marina-Mazatlan-Exterior.JPEG"
+    },
+    {
+      "id": 16,
+      "habitacion_id": 16,
+      "url": "https://cdn.easy-rez.com/production/hotels/5ea9aa762c3a0df34f8ed76ea9629971/uploads/.rooms/th_0955826001679504046.jpg"
+    },
+    {
+      "id": 17,
+      "habitacion_id": 17,
+      "url": "https://cdn.easy-rez.com/production/hotels/5ea9aa762c3a0df34f8ed76ea9629971/uploads/.rooms/th_0955826001679504046.jpg"
+    },
+    {
+      "id": 18,
+      "habitacion_id": 18,
+      "url": "https://cdn.easy-rez.com/production/hotels/5ea9aa762c3a0df34f8ed76ea9629971/uploads/.rooms/th_0955826001679504046.jpg"
+    },
+    {
+      "id": 19,
+      "habitacion_id": 19,
+      "url": "https://cdn.easy-rez.com/production/hotels/5ea9aa762c3a0df34f8ed76ea9629971/uploads/.rooms/th_0955826001679504046.jpg"
+    },
+    {
+      "id": 20,
+      "habitacion_id": 20,
+      "url": "https://cdn.easy-rez.com/production/hotels/5ea9aa762c3a0df34f8ed76ea9629971/uploads/.rooms/th_0955826001679504046.jpg"
+    },
+    {
+      "id": 21,
+      "habitacion_id": 21,
+      "url": "https://i.pinimg.com/originals/8e/39/97/8e3997a265b32e3e08bdfe8667d09a48.jpg"
+    },
+    {
+      "id": 22,
+      "habitacion_id": 22,
+      "url": "https://i.pinimg.com/originals/8e/39/97/8e3997a265b32e3e08bdfe8667d09a48.jpg"
+    },
+    {
+      "id": 23,
+      "habitacion_id": 23,
+      "url": "https://i.pinimg.com/originals/8e/39/97/8e3997a265b32e3e08bdfe8667d09a48.jpg"
+    },
+    {
+      "id": 24,
+      "habitacion_id": 24,
+      "url": "https://i.pinimg.com/originals/8e/39/97/8e3997a265b32e3e08bdfe8667d09a48.jpg"
+    },
+    {
+      "id": 25,
+      "habitacion_id": 25,
+      "url": "https://i.pinimg.com/originals/8e/39/97/8e3997a265b32e3e08bdfe8667d09a48.jpg"
+    },
+    {
+      "id": 26,
+      "habitacion_id": 26,
+      "url": "https://www.espanaenpareja.com/wp-content/uploads/2022/09/habitacion-jacuzzi-sabbia-gabbeach-valencia.jpg"
+    },
+    {
+      "id": 27,
+      "habitacion_id": 27,
+      "url": "https://www.espanaenpareja.com/wp-content/uploads/2022/09/habitacion-jacuzzi-sabbia-gabbeach-valencia.jpg"
+    },
+    {
+      "id": 28,
+      "habitacion_id": 28,
+      "url": "https://www.espanaenpareja.com/wp-content/uploads/2022/09/habitacion-jacuzzi-sabbia-gabbeach-valencia.jpg"
+    },
+    {
+      "id": 29,
+      "habitacion_id": 29,
+      "url": "https://www.espanaenpareja.com/wp-content/uploads/2022/09/habitacion-jacuzzi-sabbia-gabbeach-valencia.jpg"
+    },
+    {
+      "id": 30,
+      "habitacion_id": 30,
+      "url": "https://www.espanaenpareja.com/wp-content/uploads/2022/09/habitacion-jacuzzi-sabbia-gabbeach-valencia.jpg"
+    },
+    {
+      "id": 31,
+      "habitacion_id": 31,
+      "url": "https://image-tc.galaxy.tf/wijpeg-3dzwqugyp9z4t4z9r7amrur4l/playa-blanca-hotel-20-opt_wide.jpg?crop=0%2C100%2C1920%2C1080"
+    },
+    {
+      "id": 32,
+      "habitacion_id": 32,
+      "url": "https://image-tc.galaxy.tf/wijpeg-3dzwqugyp9z4t4z9r7amrur4l/playa-blanca-hotel-20-opt_wide.jpg?crop=0%2C100%2C1920%2C1080"
+    },
+    {
+      "id": 33,
+      "habitacion_id": 33,
+      "url": "https://image-tc.galaxy.tf/wijpeg-3dzwqugyp9z4t4z9r7amrur4l/playa-blanca-hotel-20-opt_wide.jpg?crop=0%2C100%2C1920%2C1080"
+    },
+    {
+      "id": 34,
+      "habitacion_id": 34,
+      "url": "https://image-tc.galaxy.tf/wijpeg-3dzwqugyp9z4t4z9r7amrur4l/playa-blanca-hotel-20-opt_wide.jpg?crop=0%2C100%2C1920%2C1080"
+    },
+    {
+      "id": 35,
+      "habitacion_id": 35,
+      "url": "https://image-tc.galaxy.tf/wijpeg-3dzwqugyp9z4t4z9r7amrur4l/playa-blanca-hotel-20-opt_wide.jpg?crop=0%2C100%2C1920%2C1080"
+    }
+  ],
+  "correo": [
+    {
+      "correo": "prueba@gmail.com",
+      "id": 1
+    }
+  ]
+}

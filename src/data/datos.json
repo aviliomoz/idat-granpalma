@@ -1,0 +1,75 @@
+[
+  {
+    "tipo": "Habitación Simple",
+    "capacidad": 1,
+    "numero_de_camas": 1,
+    "tipo_de_cama": "Cama 2 plazas",
+    "caracteristicas": ["Vista a la piscina", "25 metros cuadrados"],
+    "mobiliario": [
+      "Televisor 55 pulgadas",
+      "Sofa de 2 cuerpos",
+      "Mini Friobar"
+    ],
+    "servicios_adicionales": [
+      "Desayuno",
+      "Almuerzo",
+      "Gimnasio",
+      "Espacios deportivos"
+    ]
+  },
+  {
+    "tipo": "Habitación Doble Simple",
+    "capacidad": 2,
+    "numero_de_camas": 2,
+    "tipo_de_cama": "Cama 2 plazas",
+    "caracteristicas": ["Vista a la piscina", "30 metros cuadrados"],
+    "mobiliario": [
+      "Televisor 55 pulgadas",
+      "Sofa de 2 cuerpos",
+      "Mini Friobar"
+    ],
+    "servicios_adicionales": [
+      "Desayuno",
+      "Almuerzo",
+      "Gimnasio",
+      "Espacios deportivos"
+    ]
+  },
+  {
+    "tipo": "Habitación Doble Matrimonial",
+    "capacidad": 2,
+    "numero_de_camas": 2,
+    "tipo_de_cama": "Cama kingsize",
+    "caracteristicas": ["Vista al mar", "35 metros cuadrados"],
+    "mobiliario": [
+      "Televisor 60 pulgadas",
+      "Sofa de 3 cuerpos",
+      "Mini Friobar"
+    ],
+    "servicios_adicionales": [
+      "Desayuno",
+      "Almuerzo",
+      "Gimnasio",
+      "Espacios deportivos"
+    ]
+  },
+  {
+    "tipo": "Habitación Familiar",
+    "capacidad": 3,
+    "numero_de_camas": 3,
+    "tipo_de_cama": "1 plaza y media",
+    "caracteristicas": ["Vista al mar", "40 metros cuadrados"],
+    "mobiliario": [
+      "Televisor 65 pulgadas",
+      "Sofa de 3 cuerpos",
+      "Sofa de 2 cuerpos",
+      "Mini Friobar"
+    ],
+    "servicios_adicionales": [
+      "Desayuno",
+      "Almuerzo",
+      "Gimnasio",
+      "Espacios deportivos"
+    ]
+  }
+]
